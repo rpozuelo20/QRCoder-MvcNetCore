@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Byte[]
+
+<div class="container">
+    <h1>QRCoder MvcNetCore</h1>
+    <hr />
+    <form method="post">
+        <input name="textoQR" type="text" />
+        <button>Generar QR</button>
+    </form>
+    @if (Model != null)
+    {
+        <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model))" height="300" width="300" />
+    }
+</div>
